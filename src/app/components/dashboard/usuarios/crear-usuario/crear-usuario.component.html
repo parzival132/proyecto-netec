@@ -1,0 +1,105 @@
+<div class="container">
+
+    <mat-toolbar>
+        <span>Crear Usuario</span>
+      </mat-toolbar>
+      <mat-card style="margin-top: 10px;">
+        <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+            <mat-grid-list cols="4" rowHeight="70px">
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Primer nombre</mat-label>
+                        <input matInput autocomplete="off" formControlName="primer_nombre">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="3" [rowspan]="9"  >
+                   <img src="assets/usuario_login.svg" width="250" height="250">
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Segundo Nombre</mat-label>
+                        <input matInput autocomplete="off" formControlName="segundo_nombre">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Primer Apellido</mat-label>
+                        <input matInput autocomplete="off" formControlName="primer_apellido">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Segundo Apellido</mat-label>
+                        <input matInput autocomplete="off" formControlName="segundo_apellido">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                        <mat-label>Edad</mat-label>
+                        <input matInput autocomplete="off" formControlName="edad">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                
+               
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                         <mat-label >Fecha Nacimiento</mat-label>
+                        <input placeholder="dia/mes/año" matInput autocomplete="off" formControlName="fecha_nacimiento">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+            
+
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1"  >
+                    <mat-form-field class="ancho">
+                        <mat-label>Nivel Estudios</mat-label>
+                        <mat-select formControlName="nivel_estudios">
+                          <mat-option *ngFor="let item of nivel_estudio" [value]="item">
+                            {{item}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </mat-grid-tile>
+                
+                <mat-grid-tile [colspan]="1" [rowspan]="1"  >
+                    <mat-form-field class="ancho">
+                        <mat-label>Sexo</mat-label>
+                        <mat-select formControlName="sexo">
+                          <mat-option *ngFor="let item of sexo" [value]="item">
+                            {{item}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1"  >
+
+                  <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field class="ancho">
+                         <mat-label >mayor o menor de edad</mat-label>
+                        <input matInput autocomplete="off" formControlName="mayor_menor">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+
+                  
+                   
+                    
+                    <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary" style="margin-right: 20px;">Aceptar</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <br>
+            <br>
+        </form>
+      </mat-card>
+
+
+</div>

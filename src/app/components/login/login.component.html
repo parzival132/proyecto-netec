@@ -1,0 +1,28 @@
+<div class="body">
+    <div class="login">
+        <mat-spinner *ngIf="loading" diameter="50" class="iconoCarga"></mat-spinner>
+
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
+            <img src="assets/usuario_login.svg" width="50%">
+            <h1 class="colorTextos">Login</h1>
+            <!-- SE IMPORTO DE ANGULAR MATERIAL, EN APP.MODULE.TS PARA SU CORRECTO FUNCIONAMIENTO -->
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input type="text" matInput autocomplete="off" formControlName="usuario">
+              </mat-form-field>
+              <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput autocomplete="off" formControlName="password">
+            </mat-form-field>
+              <br>
+              <!-- se valida escritura de texto, despues de eso se habilita el boton de ingresar -->
+              <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid" class="ancho boton">Ingresar</button>
+              <!-- ------------------------------------------------------------------------------ -->
+        </form>
+       
+
+
+    </div>
+    
+</div>
+
